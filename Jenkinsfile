@@ -16,5 +16,12 @@ pipeline {
     }
    }
   }
+  stage('Deliver'){
+   steps {
+    sh 'export MAVEN_HOME=/opt/apache-maven-3.9.6;export
+M2_HOME=$MAVEN_HOME;export
+PATH=$MAVEN_HOME/bin:$PATH;./jenkins/scripts/deliver.sh'
+   }
+  }
  }
 }
