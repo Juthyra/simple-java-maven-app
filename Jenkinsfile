@@ -25,7 +25,7 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
 
                     // Publish integration test results
-                    step([$class: 'JUnitResultArchiver', testResults: '**/target/failsafe-reports/*.xml'])
+                    step([$class: 'JUnitResultArchiver', testResults: 'target/failsafe-reports/*.xml'])
                 }
             }
         }
