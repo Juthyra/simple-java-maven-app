@@ -22,10 +22,10 @@ pipeline {
             post {
                 always {
                     // JUnit for Unit Tests
-                    junit 'target/surefire-reports/*.xml'
+                    junit '**/surefire-reports/*.xml'
 
                     // Publish integration test results
-                    step([$class: 'JUnitResultArchiver', testResults: 'target/failsafe-reports/*.xml'])
+                    step([$class: 'JUnitResultArchiver', testResults: '**/failsafe-reports/*.xml'])
                 }
             }
         }
